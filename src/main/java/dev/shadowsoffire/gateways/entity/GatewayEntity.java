@@ -89,7 +89,6 @@ public abstract class GatewayEntity extends Entity implements IEntityAdditionalS
         super(type, level);
         this.summonerId = placer.getUUID();
         this.gate = gate;
-        Preconditions.checkArgument(gate.isBound(), "A gateway may not be constructed for an unbound holder.");
         this.setCustomName(Component.translatable(gate.getId().toString().replace(':', '.')).withStyle(Style.EMPTY.withColor(gate.get().color())));
         this.bossEvent = this.createBossEvent();
         this.refreshDimensions();
